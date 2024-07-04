@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salar's Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="pcg.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    @import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #323946;
+      color: grey;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .left {
+      font-weight: 500;
+      font-size: 2.5rem;
+      margin-left: 30px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      background-color: white;
+      padding: 0 20px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      list-style: none;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: grey;
+      transition: .3s;
+    }
+
+    nav ul li a:hover {
+      color: rgb(194, 194, 236);
+      text-decoration: underline;
+      font-size: 1.02rem;
+    }
+
+    #menu-icon {
+      font-size: 3.6rem;
+      color: grey;
+      display: none;
+    }
+
+    main hr {
+      border: 0;
+      background-color: white;
+      height: 1.2px;
+      margin: 40px 84px;
+    }
+
+    .firstSection {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 50px 0;
+      height: 510px;
+    }
+
+    .firstSection>div {
+      width: 30%;
+    }
+
+    .leftSection {
+      font-size: 2rem;
+      color: rgb(17, 193, 202);
+      font-weight: 500;
+    }
+
+    .socialmedia i {
+      color: white;
+      margin: 30px 5px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: .1rem solid rgb(17, 193, 202);
+      width: 2.5rem;
+      height: 2.5rem;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2), 0 6px 25px rgba(0, 0, 0, 0.19);
+      background: transparent;
+      border-radius: 5px;
+      transition: .3s;
+    }
+
+    .socialmedia i:hover {
+      box-shadow: 0 1px 10px rgb(17, 193, 202);
+      transform: scale(1.1);
+    }
+
+    .rightSection img {
+      width: 80%;
+      height: auto;
+      margin: 40px 0;
+      box-shadow: 0 1px 15px rgb(17, 193, 202);
+      border-radius: 2px;
+    }
+
+    .purple {
+      color: white;
+    }
+
+    #element {
+      color: white;
+    }
+
+    .secondSection {
+      background-color: #2a303d;
+      margin: 0 130px;
+      color: white;
+      padding: 15px;
+      border-radius: 20px;
+      box-shadow: 0 1px 15px rgb(17, 193, 202);
+    }
+
+    .secondSection h1 {
+      font-size: 1.9rem;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+
+    .university,
+    .college {
+      margin: 60px 0;
+    }
+
+    .gpa,
+    .marks {
+      margin: 15px 0;
+    }
+
+    .downloadbutton {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+    }
+
+    .downloadbutton a {
+      text-decoration: none;
+      background: rgba(169, 169, 169, 0.37);
+      color: white;
+      cursor: pointer;
+      border-radius: 30px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      padding: 1.5rem 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: .3s;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2), 0 6px 25px rgba(0, 0, 0, 0.19);
+    }
+
+    .downloadbutton a:hover {
+      box-shadow: 0 1px 15px rgb(17, 193, 202);
+      transform: scale(1.1);
+    }
+
+    .thirdSection {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 50px 100px;
+      align-items: flex-start;
+    }
+
+    .skill {
+
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .skill h1 {
+      color: white;
+      font-size: 1.9rem;
+      font-weight: 500;
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+
+    .fSection,
+    .sSection,
+    .tSection,
+    .foSection,
+    .fiSection {
+      background-color: #2a303d;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5%;
+      color: white;
+      height: auto;
+      width: 85vh;
+      padding: 15px;
+      border-radius: 20px;
+      box-shadow: 0 1px 15px rgb(17, 193, 202);
+    }
+
+    .fSection h2,
+    .sSection h2,
+    .tSection h2,
+    .foSection h2,
+    .fiSection h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .fourthSection {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 60px 100px;
+      margin-bottom: 180px;
+      align-items: flex-start;
+    }
+
+    .services {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .services h1 {
+      color: white;
+      font-size: 1.9rem;
+      font-weight: 500;
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+
+    .serfSection,
+    .sersSection {
+      background-color: #2a303d;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5%;
+      color: white;
+      height: 40vh;
+      width: 85vh;
+      padding: 15px;
+      transition: .3s;
+      border-radius: 10px;
+      box-shadow: 0 1px 15px rgb(17, 193, 202);
+    }
+
+    .serfSection h2,
+    .sersSection h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .fourthSection .serfSection:hover {
+      box-shadow: 0 1px 30px rgb(17, 193, 202);
+      color: rgb(0, 133, 140);
+      transform: scale(1.1);
+    }
+
+    .fourthSection .sersSection:hover {
+      box-shadow: 0 1px 30px rgb(17, 193, 202);
+      color: rgb(0, 133, 140);
+      transform: scale(1.1);
+    }
+
+    .fifthSection {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 60px 100px;
+      margin-bottom: 30px;
+      align-items: flex-start;
+      background-color: #2a303d;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 1px 15px rgb(17, 193, 202);
+    }
+
+    .contact {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .contact h1 {
+      color: white;
+      font-size: 1.9rem;
+      font-weight: 500;
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      /* text-align: left; */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 200;
+      color: white;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      max-height: 100px; /* Maximum height */
+      max-width: 300px; /* Maximum width */
+    }
+
+    button {
+      width: 50%;
+      padding: 10px;
+      background: rgba(169, 169, 169, 0.37);
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition-duration: .3s;
+    }
+
+    button:hover {
+      box-shadow: 0 1px 15px rgb(17, 193, 202);
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 800px) {
+      .left {
+        margin-left: 0px;
+      }
+
+      nav {
+        flex-direction: column;
+        height: auto;
+      }
+
+      #menu-icon {
+        display: inline-flex;
+        position: absolute;
+        right: 10px;
+        top: 1px;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 50%;
+        background-color: white;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        padding: 1rem;
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .firstSection {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin: 30px 0;
+      }
+
+      .firstSection>div {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+
+      .leftSection {
+        order: 2;
+        width: 100%;
+        text-align: center;
+      }
+
+      .rightSection {
+        order: 1;
+        width: 100%;
+        text-align: center;
+      }
+
+      .rightSection img {
+        width: 50%;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      .secondSection {
+        margin: 0 30px;
+      }
+
+      .thirdSection {
+        margin: 0 30px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .skill {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .downloadbutton {
+        flex-direction: column;
+        align-items: center;
+
+      }
+
+      .downloadbutton a {
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .fSection,
+      .sSection,
+      .tSection,
+      .foSection,
+      .fiSection {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 300px;
+      }
+
+      .fourthSection {
+        margin: 40px 50px;
+        margin-bottom: 100px;
+      }
+
+      .serfSection,
+      .sersSection {
+        width: 50vh;
+        height: 30vh;
+      }
+
+      .services h1 {
+        font-size: 1.5rem;
+      }
+
+      .fifthSection {
+        margin: 20px 20px;
+        margin-bottom: 60px;
+        padding: 20px;
+      }
+
+      .contact h1 {
+        font-size: 1.5rem;
+      }
+
+      .contact form {
+        max-width: 100%;
+        padding: 0 10px;
+      }
+
+      label {
+        font-size: 1rem;
+      }
+
+      input,
+      textarea {
+        padding: 8px;
+      }
+
+      button {
+        padding: 8px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="left">Salar.</div>
+      <a href="#"><i class='bx bx-menu' id="menu-icon"></i></a>
+      <div class="right">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="firstSection">
+      <div class="leftSection">
+        Hi! My name is
+        <span class="purple">Salar</span>
+        <div>and I'm a passionate</div>
+        <span id="element"></span>
+        <div class="socialmedia">
+          <a href="https://www.facebook.com/profile.php?id=100090831142366" target="_blank"><i
+              class='bx bxl-facebook'></i></a>
+          <a href="https://www.instagram.com/salaar_kha9/" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+          <a href="https://www.linkedin.com/in/zalar/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        </div>
+      </div>
+      <div class="rightSection">
+        <img src="pcg.png" alt="Profile Image">
+      </div>
+    </section>
+    <hr>
+    <section id="education" class="secondSection">
+      <h1>EDUCATION</h1>
+      <div class="university">
+        <span class="date">2023-Present</span>
+        <h2>Bachelor's of Science in Software Engineering</h2>
+        <span class="position">Comsats University Islamabad</span>
+        <p class="description">I am currently pursuing a career in Software Engineering at Comsats University Islamabad
+          and belong to the batch of Spring 23 yet to graduate in the year 2027.</p>
+        <p class="gpa"><b>CGPA: 3.44</b></p>
+      </div>
+      <div class="college">
+        <span class="date">2019-2021</span>
+        <h2>Intermediate</h2>
+        <span class="position">Steps College</span>
+        <p class="description">I completed my FSc Pre-Medical from Steps College Rawalpindi back in 2021 and secured a
+          good grade in my intermediate exams.</p>
+        <p class="marks"><b>Marks: 1050/1100</b></p>
+      </div>
+      <div class="downloadbutton">
+        <p><a href="Salar Wasil.pdf" target="_blank" class="button">Download CV</a></p>
+      </div>
+    </section>
+    <hr>
+    <section id="skills" class="thirdSection">
+      <div class="skill">
+        <h1>SKILLS</h1>
+      </div>
+      <div class="fSection">
+        <h2>Java</h2>
+        <p>Software Development</p>
+      </div>
+      <div class="sSection">
+        <h2>C++</h2>
+        <p>Data Structures and Algorithms</p>
+      </div>
+      <div class="tSection">
+        <h2>MySQL</h2>
+        <p>Database Management</p>
+      </div>
+      <div class="foSection">
+        <h2>UI/UX</h2>
+        <p>Mockups and Wireframes</p>
+      </div>
+      <div class="fiSection">
+        <h2>Git/GitHub</h2>
+        <p>Version Control</p>
+      </div>
+    </section>
+    <hr>
+    <section id="services" class="fourthSection">
+      <div class="services">
+        <h1>SERVICES</h1>
+      </div>
+      <div class="serfSection">
+        <h2>Web Development</h2>
+      </div>
+      <div class="sersSection">
+        <h2>User Interface Designer</h2>
+      </div>
+    </section>
+    <hr>
+    <section id="contact" class="fifthSection">
+      <div class="contact">
+        <h1>CONTACT</h1>
+      </div>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="ee59a8c6-0829-4063-91a9-d80c59949c20">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required maxlength="250"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['Web Developer.', 'UI/UX Designer.', 'Software Engineer.'],
+      typeSpeed: 10,
+      backSpeed: 10,
+      loop: false,
+    });
+
+    let menuIcon = document.querySelector('#menu-icon');
+    let navMenu = document.querySelector('nav ul');
+    let navLinks = document.querySelectorAll('nav ul li a');
+
+    menuIcon.onclick = () => {
+      menuIcon.classList.toggle('bx-x');
+      navMenu.classList.toggle('show');
+    };
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuIcon.classList.remove('bx-x');
+        navMenu.classList.remove('show');
+      });
+    });
+  </script>
+</body>
+
+</html>
